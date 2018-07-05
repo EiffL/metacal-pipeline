@@ -1,0 +1,4 @@
+tracts: [4638]
+patches: ["0,0", "0,1", "0,2"]
+filters: ["r", "i"]
+repo: '/global/projecta/projectdirs/lsst/global/in2p3/Run1.1/output'
