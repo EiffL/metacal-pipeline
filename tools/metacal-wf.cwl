@@ -25,4 +25,4 @@ steps:
       filter: filters
     out: [meds]
     scatter: [tract, patch, filter]
-    scatterMethod: nested_crossproduct
+    scatterMethod: flat_crossproduct
