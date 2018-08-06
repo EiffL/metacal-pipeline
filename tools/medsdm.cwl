@@ -10,7 +10,7 @@ doc: |
 
 requirements:
   - class: DockerRequirement
-    dockerPull: "eiffl/medsdm:latest"
+    dockerPull: "eiffl/metacal:latest"
 
 inputs:
   repo:
