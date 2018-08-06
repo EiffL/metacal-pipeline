@@ -2,3 +2,5 @@ tracts: [4638]
 patches: ["0,0", "0,1", "0,2"]
 filters: ["r", "i"]
 repo: /global/cscratch1/sd/desc/DC2/global/in2p3/Run1.1/output
+config_file: run-ngmix-cm-0001.yaml
+output_filename: outcat
