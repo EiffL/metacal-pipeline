@@ -37,7 +37,7 @@ inputs:
     inputBinding:
       position: 4
 
-   config:
+  config:
     type: File?
     doc: 'Configuration file'
     inputBinding:
