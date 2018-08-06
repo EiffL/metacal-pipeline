@@ -37,6 +37,13 @@ inputs:
     inputBinding:
       position: 4
 
+   config:
+    type: File?
+    doc: 'Configuration file'
+    inputBinding:
+      prefix: '--config='
+      separate: false
+
 outputs:
   meds:
     type: File

@@ -7,7 +7,8 @@ inputs:
   tracts: int[]
   patches: string[]
   filters: string[]
-  config_file: File
+  medsdm_conf: File
+  ngmixit_conf: File
   output_filename: string
 
 outputs:
@@ -30,6 +31,7 @@ steps:
       tract: tracts
       patch: patches
       filter: filters
+      config: medsdm_conf
     out: [meds]
     scatter: [tract, patch, filter]
     scatterMethod: flat_crossproduct
@@ -37,7 +39,7 @@ steps:
   ngmixit:
       run: ngmixit.cwl
       in:
-        config_file: config_file
+        config: ngmixit_conf
         data_files: medsdm/meds
         out_file: output_filename
       out: [ngmixout]

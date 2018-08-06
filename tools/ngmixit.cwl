@@ -13,7 +13,7 @@ requirements:
     dockerPull: 'eiffl/metacal:latest'
 
 inputs:
-  config_file:
+  config:
     type: File
     doc: "Configuration file"
     inputBinding:
@@ -93,7 +93,7 @@ inputs:
     doc: "File with flags for each object; flags != 0 are ignored"
     inputBinding:
       prefix: '--obj-flags='
-      separate: false  
+      separate: false
 
 outputs:
   ngmixout:
