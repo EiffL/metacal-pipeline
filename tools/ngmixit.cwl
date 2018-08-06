@@ -8,7 +8,7 @@ cwlVersion: v1.0
 doc: |
   Process the input meds file through ngmix.
 
-requirements:
+hints:
   - class: DockerRequirement
     dockerPull: 'eiffl/metacal:latest'
 

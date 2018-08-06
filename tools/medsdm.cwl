@@ -8,7 +8,7 @@ cwlVersion: v1.0
 doc: |
   Tool to extract meds cutouts from a given DM [tract, patch]
 
-requirements:
+hints:
   - class: DockerRequirement
     dockerPull: "eiffl/metacal:latest"
 
