@@ -102,6 +102,4 @@ outputs:
     outputBinding:
       glob: $(inputs.out_file)
 
-arguments: ['--work-dir=', $(runtime.outdir)]
-
 baseCommand: "ngmixit"
