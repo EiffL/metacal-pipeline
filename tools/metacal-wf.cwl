@@ -17,8 +17,12 @@ outputs:
     outputSource: medsdm/meds
 
   ngmixout:
-    type: File
+    type: File[]
     outputSource: ngmixit/ngmixout
+
+  file_list:
+    type: File
+    outputSource: write_filenames/file_list
 
 requirements:
   - class: ScatterFeatureRequirement
@@ -41,5 +45,27 @@ steps:
       in:
         config: ngmixit_conf
         data_files: medsdm/meds
-        out_file: output_filename
+        out_file: "ngmixit_output.fits"
       out: [ngmixout]
+      scatter: data_files
+
+  write_filenames:
+    run:
+      class: CommandLineTool
+      id: write_filenames
+      inputs:
+        infiles: {type: 'File[]', inputBinding: {}}
+      outputs:
+        file_list: {type: File, outputBinding: {glob: "file_list.txt"}}
+      baseCommand: "echo"
+      stdout: "file_list.txt"
+    in:
+      infiles: ngmixit/ngmixout
+    out: [file_list]
+
+  megamix-collate:
+    run: megamix-meds-collate-desdm.cwl
+    in:
+      config: ngmixit_conf
+      file_list: write_filenames/file_list
+      collated_file: output_filename

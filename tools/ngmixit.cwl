@@ -26,7 +26,7 @@ inputs:
       position: 1
 
   data_files:
-    type: 'File[]'
+    type: 'File'
     doc: "Meds files to process"
     inputBinding:
       position: 2
