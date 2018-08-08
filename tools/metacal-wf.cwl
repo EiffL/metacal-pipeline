@@ -10,6 +10,7 @@ inputs:
   medsdm_conf: File
   ngmixit_conf: File
   output_filename: string
+  tmp_ngmix_filename: string
 
 outputs:
   meds:
@@ -45,7 +46,7 @@ steps:
       in:
         config: ngmixit_conf
         data_files: medsdm/meds
-        out_file: "ngmixit_output.fits"
+        out_file: tmp_ngmix_filename
       out: [ngmixout]
       scatter: data_files
 
@@ -69,3 +70,4 @@ steps:
       config: ngmixit_conf
       file_list: write_filenames/file_list
       collated_file: output_filename
+    out: [ngmix_cat]

@@ -9,6 +9,9 @@ medsdm_conf:
 
 ngmixit_conf:
   class: File
-  path: run-ngmix-cm-0001.yaml
+  path: run-dbcoadd-cm-001.yaml
 
-output_filename: outcat
+output_filename: ngmix_catalog.fits
+
+# Template name for output of ngmixit
+tmp_ngmix_filename: tmp_ngmix.fits

@@ -20,7 +20,7 @@ inputs:
       position: 0
 
   file_list:
-    type: string
+    type: File
     doc: "list of files to collate"
     inputBinding:
       position: 1
@@ -50,7 +50,7 @@ inputs:
       prefix: '--skip-errors'
 
 outputs:
-  ngmixout:
+  ngmix_cat:
     doc: "Collated ngmix file"
     type: File
     outputBinding:
