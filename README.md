@@ -38,6 +38,16 @@ which will be use the debug queue instead (limited to 30 mins, but with faster a
 
 
 > Due to a Parsl bug (https://github.com/Parsl/parsl/issues/271), using `cwl-parsl` like this from the login node might leave some zombie processes behind, be aware of this and make sure to check for lingering `ippcontroler` processes after the workflow completes.
+> The following alternative method is safer, but doesn't scale as much.
 
-
-
+For debugging purposes, it's easier (and safer) to use an interactive session, like this:
+```bash
+$ salloc -N 1 -q interactive -C haswell -t03:00:00 -L SCRATCH
+$ cwlparsl --shifter \
+  --outdir=/global/cscratch1/sd/flanusse/metacal-pipeline \
+  --cachedir=/global/cscratch1/sd/flanusse/workdir/cache/ \
+  --basedir=/global/cscratch1/sd/flanusse/workdir/ \
+  tools/metacal-wf.cwl config/metacal-wf-testing.yml
+```
+Note the missing `--parsl` flag, which means that the workflow will use a local thread executor on the interactive node,
+instead of submiting jobs to slurm.
