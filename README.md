@@ -36,9 +36,8 @@ $ cwlparsl --parsl cori --shifter \
 The `--parsl cori` tells `cwl-parsl` to run parsl on the cori slurm system, note that you can also use `--parsl cori-debug`, 
 which will be use the debug queue instead (limited to 30 mins, but with faster access).
 
-<aside class="warning">
-Due to a Parsl bug (https://github.com/Parsl/parsl/issues/271), using `cwl-parsl` like this from the login node might leave some zombie processes behind, be aware of this and make sure to check for lingering `ippcontroler` processes after the workflow completes.
-</aside>
+
+> Due to a Parsl bug (https://github.com/Parsl/parsl/issues/271), using `cwl-parsl` like this from the login node might leave some zombie processes behind, be aware of this and make sure to check for lingering `ippcontroler` processes after the workflow completes.
 
 
 
