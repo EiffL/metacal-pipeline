@@ -24,6 +24,10 @@ outputs:
   file_list:
     type: File
     outputSource: write_filenames/file_list
+    
+  ngmix_cat:
+    type: File
+    outputSource: megamix-collate/ngmix_cat
 
 requirements:
   - class: ScatterFeatureRequirement
