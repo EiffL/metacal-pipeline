@@ -21,10 +21,6 @@ outputs:
     type: File[]
     outputSource: ngmixit/ngmixout
 
-  file_list:
-    type: File
-    outputSource: write_filenames/file_list
-    
   ngmix_cat:
     type: File
     outputSource: megamix-collate/ngmix_cat
@@ -54,24 +50,10 @@ steps:
       out: [ngmixout]
       scatter: data_files
 
-  write_filenames:
-    run:
-      class: CommandLineTool
-      id: write_filenames
-      inputs:
-        infiles: {type: 'File[]', inputBinding: {}}
-      outputs:
-        file_list: {type: File, outputBinding: {glob: "file_list.txt"}}
-      baseCommand: "echo"
-      stdout: "file_list.txt"
-    in:
-      infiles: ngmixit/ngmixout
-    out: [file_list]
-
   megamix-collate:
     run: megamix-meds-collate-desdm.cwl
     in:
       config: ngmixit_conf
-      file_list: write_filenames/file_list
+      infiles: ngmixit/ngmixout
       collated_file: output_filename
     out: [ngmix_cat]
