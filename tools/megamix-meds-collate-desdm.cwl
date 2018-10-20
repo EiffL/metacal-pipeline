@@ -31,7 +31,7 @@ inputs:
     doc: "Files to collate"
 
   file_list:
-    type: File
+    type: string
     doc: "list of files to collate"
     default: file_list.txt
     inputBinding:
