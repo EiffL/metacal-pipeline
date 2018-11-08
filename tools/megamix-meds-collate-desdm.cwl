@@ -8,13 +8,6 @@ cwlVersion: v1.0
 doc: |
   Combine and formats ngmix outputs into a single file
 
-requirements:
-  InitialWorkDirRequirement:
-    listing:
-     - entryname: file_list.txt
-       entry: |
-          $(inputs.message)
-
 hints:
   - class: DockerRequirement
     dockerPull: 'eiffl/metacal:latest'
@@ -26,20 +19,15 @@ inputs:
     inputBinding:
       position: 0
 
-  infiles:
-    type: File[]
-    doc: "Files to collate"
-
-  file_list:
-    type: string
-    doc: "list of files to collate"
-    default: file_list.txt
-    inputBinding:
-      position: 1
-
   collated_file:
     type: string
     doc: "path to the collated output file"
+    inputBinding:
+      position: 1
+
+  input_files:
+    type: File[]
+    doc: "Files to collate"
     inputBinding:
       position: 2
 
@@ -68,4 +56,4 @@ outputs:
     outputBinding:
       glob: $(inputs.collated_file)
 
-baseCommand: "megamix-meds-collate-desdm"
+baseCommand: "megamix-meds-collate-medsdm"

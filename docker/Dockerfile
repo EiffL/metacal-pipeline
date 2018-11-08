@@ -20,7 +20,7 @@ RUN source /opt/lsst/software/stack/loadLSST.bash && setup lsst_distrib \
     && pip install git+https://github.com/esheldon/coaddsim@5881c1bc471222b3eda45bf5961d28c45c1da591
 
 RUN source /opt/lsst/software/stack/loadLSST.bash && setup lsst_distrib \
-    && pip install git+https://github.com/esheldon/ngmixer@v0.9.6
+    && pip install git+https://github.com/EiffL/ngmixer
 
 COPY entrypoint.sh /entrypoint.sh
 
