@@ -25,7 +25,7 @@ inputs:
     inputBinding:
       position: 1
 
-  input_files:
+  infiles:
     type: File[]
     doc: "Files to collate"
     inputBinding:
