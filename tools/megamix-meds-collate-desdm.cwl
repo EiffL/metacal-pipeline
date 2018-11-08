@@ -19,15 +19,15 @@ inputs:
     inputBinding:
       position: 0
 
-  file_list:
-    type: File
-    doc: "list of files to collate"
-    inputBinding:
-      position: 1
-
   collated_file:
     type: string
     doc: "path to the collated output file"
+    inputBinding:
+      position: 1
+
+  infiles:
+    type: File[]
+    doc: "Files to collate"
     inputBinding:
       position: 2
 
@@ -56,4 +56,4 @@ outputs:
     outputBinding:
       glob: $(inputs.collated_file)
 
-baseCommand: "megamix-meds-collate-desdm"
+baseCommand: "megamix-meds-collate-medsdm"
